@@ -100,23 +100,24 @@ class VE_BankWindhoek_Gateway {
             ? 'https://staging-apiv3.adumoonline.com/product/payment/v1/initialisevirtual'
             : 'https://apiv3.adumoonline.com/product/payment/v1/initialisevirtual';
 
-        // Brand styles: Travel Namibia accents. No font-family / weight / size overrides.
+        // Brand styles aligned to venture.com.na Elementor kit (visual only).
         ?>
         <style id="ve-bankwindhoek-pay-css">
             .ve-bankwindhoek-pay {
-                --ve-primary: #f48c26;
-                --ve-accent: #c0d03c;
-                --ve-secondary: #54595f;
-                --ve-text: #7a7a7a;
-                --ve-radius: 10px;
-                --ve-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+                --ve-primary: #f4a239;
+                --ve-accent: #d1d741;
+                --ve-text: #221f21;
+                --ve-secondary: #7a7a7a;
+                --ve-radius: 0px;
+                --ve-font: "Effra", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
                 display: block;
                 width: 100%;
                 max-width: 480px;
                 margin: 0 auto;
                 padding: 8px 8px 4px;
                 text-align: center;
-                color: var(--ve-secondary);
+                color: var(--ve-text);
+                font-family: var(--ve-font);
                 box-sizing: border-box;
             }
             .ve-bankwindhoek-pay form {
@@ -125,7 +126,10 @@ class VE_BankWindhoek_Gateway {
             }
             .ve-bankwindhoek-pay h3 {
                 margin: 8px 0 12px;
-                color: var(--ve-secondary);
+                color: var(--ve-text);
+                font-family: var(--ve-font);
+                font-weight: 400;
+                letter-spacing: 0.02em;
             }
             .ve-bankwindhoek-pay .ve-bw-logo {
                 display: block;
@@ -136,7 +140,7 @@ class VE_BankWindhoek_Gateway {
             }
             .ve-bankwindhoek-pay p {
                 margin: 0 0 20px;
-                color: var(--ve-text);
+                color: var(--ve-secondary);
             }
             .ve-bankwindhoek-pay .ve-bw-btn {
                 display: inline-block;
@@ -144,30 +148,36 @@ class VE_BankWindhoek_Gateway {
                 max-width: 360px;
                 padding: 0.95em 1.5em;
                 margin-top: 10px;
-                background: var(--ve-primary);
+                background: var(--ve-accent);
                 color: #fff;
-                border: none;
+                border: 1px solid var(--ve-accent);
                 border-radius: var(--ve-radius);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+                box-shadow: none;
                 cursor: pointer;
-                font: inherit;
-                text-transform: uppercase;
+                font-family: var(--ve-font);
+                font-weight: 400;
+                font-size: 1.05em;
+                text-transform: none;
+                letter-spacing: 0.02em;
                 line-height: 1.3;
-                transition: background-color 0.15s ease;
+                transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
             }
             .ve-bankwindhoek-pay .ve-bw-btn:hover {
-                background: #e07a18;
+                background: #fff;
+                color: var(--ve-accent);
+                border-color: var(--ve-accent);
             }
             .ve-bankwindhoek-error {
                 max-width: 480px;
                 margin: 0 auto;
                 padding: 20px;
                 text-align: left;
-                color: #7a1f1f;
-                background: #fff5f5;
-                border: none;
-                border-radius: 10px;
-                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+                color: var(--ve-text, #221f21);
+                background: rgba(219, 18, 119, 0.06);
+                border: 1px solid #db1277;
+                border-radius: 0;
+                font-family: "Effra", system-ui, sans-serif;
+                box-shadow: none;
             }
         </style>
         <div class="ve-bankwindhoek-pay">
